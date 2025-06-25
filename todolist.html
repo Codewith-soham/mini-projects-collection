@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark To-Do List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #121212;
+        color: #f0f0f0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px;
+      }
+
+      .todo-container {
+        background: #1e1e1e;
+        padding: 30px;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #00ffcc;
+      }
+
+      .input-area {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+      }
+
+      .input-area input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #2c2c2c;
+        color: #fff;
+      }
+
+      .input-area button {
+        padding: 12px 20px;
+        background-color: #00ffcc;
+        border: none;
+        border-radius: 8px;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .input-area button:hover {
+        background-color: #00e6b8;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        background: #2c2c2c;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.2s ease;
+        cursor: pointer;
+      }
+
+      li.completed .task-text {
+        text-decoration: line-through;
+        color: #777;
+      }
+
+      .delete-btn {
+        background: #ff4d4d;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .delete-btn:hover {
+        background: #ff1a1a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="todo-container">
+      <h1>📝 Dark To-Do List</h1>
+      <div class="input-area">
+        <input type="text" id="text" placeholder="Enter a task..." />
+        <button id="add-task">Add</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
