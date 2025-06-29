@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url("https://wallpaperaccess.com/full/5466337.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .input-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(20, 20, 20, 0.8);
+      color: #fff;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      background: rgba(30, 30, 30, 0.9);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    button {
+      padding: 12px 15px;
+      background: #1f1f1f;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    #weather-info {
+      margin-top: 25px;
+    }
+
+    #city-name {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #temperature {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    #description {
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    #weather-icon {
+      width: 80px;
+      height: 80px;
+      margin: 10px 0;
+    }
+
+    #error-message {
+      color: #ff8a80;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌦️ Weather App</h1>
+    <div class="input-container">
+      <input type="text" id="city-input" placeholder="Enter city name" />
+      <button id="get-weather-btn">Search</button>
+    </div>
+    <div id="weather-info" class="hidden">
+      <h2 id="city-name">City Name</h2>
+      <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" />
+      <p id="temperature"></p>
+      <p id="description">Description</p>
+      <p id="location">location: </p>
+    </div>
+    <p id="error-message" class="hidden">City not found. Please try again.</p>
+  </div>
+  <script src="./weatherscript.js"></script>
+</body>
+</html>
